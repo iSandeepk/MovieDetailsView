@@ -95,7 +95,7 @@ def landing_page():
             session['api_key'] = api_key 
             return redirect('/movies')
         else:
-            return render_template('landing.html', error='Invalid API Key')
+            return render_template('error.html', error='Invalid API Key')
     return render_template('landing.html')
 
 # retreiving the data from the api 
@@ -144,6 +144,38 @@ def get_movies():
 
 # this part comes for the search of the desired movies from the api
 
+# @app.route('/search', methods=['GET'])
+# def search_movies():
+#     search_query = request.args.get('search')
+
+#     if search_query:
+#         url = "https://advanced-movie-search.p.rapidapi.com/search/movie"
+#         querystring = {"query": search_query, "page": "1"}
+
+#         headers = {
+#             "X-RapidAPI-Key": "d3990f018emshcb4637527c98346p1a395ajsn9092289ff168",
+#             "X-RapidAPI-Host": "advanced-movie-search.p.rapidapi.com"
+#         }
+
+#         response = requests.get(url, headers=headers, params=querystring)
+
+#         if response.status_code == 200:
+#             search_results = response.json()
+#             movies = []
+#             for movie in search_results['results']:
+#                 movies.append({
+#                     'title': movie['title'],
+#                     'year': movie['release_date'],
+#                     'rating': movie['vote_average'],
+#                     'overview': movie['overview'],
+#                     'poster_path': movie['poster_path'],
+#                     'backdrop_path': movie['backdrop_path'],
+#                 })
+#             return render_template('display.html', movies=movies, query=search_query)
+
+#     return jsonify({'error': 'Failed to retrieve movie search results'})
+
+
 @app.route('/search', methods=['GET'])
 def search_movies():
     search_query = request.args.get('search')
@@ -171,7 +203,7 @@ def search_movies():
                     'poster_path': movie['poster_path'],
                     'backdrop_path': movie['backdrop_path'],
                 })
-            return render_template('display.html', movies=movies, query=search_query)
+            return jsonify({'movies': movies, 'query': search_query})
 
     return jsonify({'error': 'Failed to retrieve movie search results'})
 
