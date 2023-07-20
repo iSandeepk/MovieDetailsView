@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="search-section">
+        <h1>Movies</h1>
+        <form id="search-form" action="{{ url_for('search_movies') }}" method="GET">
+            <input type="text" name="search" placeholder="Search movie...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="movie-section">
+        <div class="card-row">
+            {% for movie in movies %}
+            <div class="card">
+                <img src="{{ movie.thumbnail }}" alt="{{ movie.name }}" class="movie-image">
+                <div class="movie-details">
+                    <h2>{{ movie.name }}</h2>
+                    <p>{{ movie.description }}</p>
+                    <p>Year: {{ movie.year }}</p>
+                    <p>Rating: {{ movie.rating }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

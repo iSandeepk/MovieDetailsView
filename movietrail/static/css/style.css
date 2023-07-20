@@ -1,0 +1,130 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.movie-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 40px;
+    background-color: #000;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.movie-image {
+    width: 64%;
+    height: 40vh;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-height: 288px; /* Adjust the value as per your preference */
+}
+
+.movie-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.movie-details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+.movie-list-container {
+    margin-top: 50px;
+}
+
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 40px;
+    background-color: #000;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.movie-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.movie-details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+/* Search section */
+.search-section {
+    background-color: #000;
+    padding: 20px;
+    color: white;
+}
+
+.search-section h1 {
+    text-align: center;
+    color: white;
+}
+
+#search-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#search-form input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-form button {
+    padding: 10px 22px;
+    background-color: darkgoldenrod;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-form button:hover {
+    background-color: goldenrod;
+}
+
